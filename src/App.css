@@ -1,49 +1,166 @@
 .container {
-  border: 1px solid green;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    font-family: "Rubik", sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: whitesmoke;
 }
 
 .inputContainer {
-  border: 1px solid blue;
-  width: 90%;
-  height: 10%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    width: 90%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0rem;
+    font-family: "Rubik", sans-serif;
 }
 
 input {
-  padding: 0.7rem 0.8rem;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  border: 1px solid rgb(218, 215, 215);
-  border-radius: 0.3rem;
-  font-size: 0.9rem;
+    padding: 0.7rem 0.9rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(218, 215, 215);
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    font-family: "Rubik", sans-serif;
 }
 
 .addPlayer {
-  background-color: rgb(21,52,72);
-  border: none;
-  color: white;
-  padding: 0.7rem 2rem;
-  border-radius: 0.3rem;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  transition: all 150ms;
+    background-color: rgb(10, 78, 123);
+    border: none;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    transition: all 150ms;
+    font-family: "Rubik", sans-serif;
+    cursor: pointer;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+    font-weight: 600;
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.addPlayer:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: rgb(10, 78, 123);
 }
 
 .board {
-  border: 1px solid red;
-  width: 90%;
-  height: 30%;
+    overflow-y: auto;
+    border: 1px solid rgb(86, 84, 84);
+    box-shadow: rgba(255, 255, 255, 0.5) 0px 5px 15px;
+    border-radius: 0.3rem;
+    padding: 2rem 2rem;
+    width: 90%;
+    height: 78%;
+    margin: 1rem 0rem;
+    display: grid;
+    gap: 2rem;
+    align-items: flex-start;
 }
 
 .boardRow {
-  border: 1px solid yellow;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background-image: linear-gradient(
+        to bottom,
+        rgb(14, 16, 30),
+        rgb(44, 62, 80)
+    );
+    color: white;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1.5fr 1fr 0.2fr;
+    height: 85px;
+    gap: 10px;
+    align-items: center;
+}
+
+.nameTime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 80%;
+}
+
+.name {
+    font-size: 1.4rem;
+}
+
+.time {
+    font-size: 0.9rem;
+}
+
+.country {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    font-size: 1.2rem;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.2rem;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+ion-icon {
+    padding: 0rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.4rem;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.increment,
+.decrement {
+    height: 35px;
+    width: 35px;
+    border-radius: 20px;
+    font-size: 1rem;
+    border: none;
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    letter-spacing: 0.04rem;
+    cursor: pointer;
+}
+
+.increment {
+    background-color: green;
+}
+
+.decrement {
+    background-color: rgb(218, 2, 2);
+}
+
+.increment:hover,
+.decrement:hover {
+    border: 2px solid rgb(249, 247, 247);
 }

@@ -5,13 +5,19 @@
 }
 
 html,body{
-  min-height: 100%;
-  min-width: 100%;
-  background-color: antiquewhite;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: rgb(25,26,26);
+  font-family: "Rubik", sans-serif;
 }
 
 #root{
   min-height: 100vh;
   min-width: 100vw;
-  border: 1px solid green;
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  
 }
