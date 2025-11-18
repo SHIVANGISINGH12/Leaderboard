@@ -1,0 +1,49 @@
+.container {
+  border: 1px solid green;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.inputContainer {
+  border: 1px solid blue;
+  width: 90%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  padding: 0.7rem 0.8rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(218, 215, 215);
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.addPlayer {
+  background-color: rgb(21,52,72);
+  border: none;
+  color: white;
+  padding: 0.7rem 2rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  transition: all 150ms;
+}
+
+.board {
+  border: 1px solid red;
+  width: 90%;
+  height: 30%;
+}
+
+.boardRow {
+  border: 1px solid yellow;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
