@@ -43,8 +43,8 @@ input {
     transition: all 150ms;
     font-family: "Rubik", sans-serif;
     cursor: pointer;
-    font-size: 1.1rem;
-    letter-spacing: 0.05rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.03rem;
     font-weight: 600;
     transition: transform 0.2s, background-color 0.2s, color 0.2s;
 }
@@ -64,9 +64,10 @@ input {
     width: 90%;
     height: 78%;
     margin: 1rem 0rem;
-    display: grid;
-    gap: 2rem;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: flex-start;
 }
 
 .boardRow {
@@ -78,8 +79,8 @@ input {
     color: white;
     display: grid;
     grid-template-columns: 2fr 2fr 2fr 1.5fr 1fr 0.2fr;
-    height: 85px;
-    gap: 10px;
+    height: 5.5rem;
+    gap: 1rem;
     align-items: center;
 }
 
@@ -129,6 +130,7 @@ ion-icon {
     align-items: center;
     height: 100%;
     font-size: 1.4rem;
+    cursor: pointer;
 }
 
 .buttonsContainer {
