@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import dayjs from "dayjs";
 
 function App() {
     const [inputs, setInputs] = useState({});
@@ -24,38 +25,48 @@ function App() {
             inputs.country !== undefined &&
             inputs.score !== undefined
         ) {
-            setPeopleList((prevList) => [
-                ...prevList,
-                { ...inputs, id: crypto.randomUUID() },
-            ].sort((a, b) => b.score - a.score));
+            setPeopleList((prevList) =>
+                [
+                    ...prevList,
+                    {
+                        ...inputs,
+                        id: crypto.randomUUID(),
+                        date: dayjs().format("M/D/YYYY, h:mm:ss A"),
+                    },
+                ].sort((a, b) => b.score - a.score)
+            );
             setInputs({});
         }
     }
 
     function increment(id) {
         setPeopleList((prevList) =>
-            prevList.map((person) =>
-                person.id === id
-                    ? { ...person, score: person.score + 5 }
-                    : person
-            ).sort((a, b) => b.score - a.score)
+            prevList
+                .map((person) =>
+                    person.id === id
+                        ? { ...person, score: person.score + 5 }
+                        : person
+                )
+                .sort((a, b) => b.score - a.score)
         );
     }
 
     function decrement(id) {
         setPeopleList((prevList) =>
-            prevList.map((person) =>
-                person.id === id
-                    ? { ...person, score: person.score - 5 }
-                    : person
-            ).sort((a, b) => b.score - a.score)
+            prevList
+                .map((person) =>
+                    person.id === id
+                        ? { ...person, score: person.score - 5 }
+                        : person
+                )
+                .sort((a, b) => b.score - a.score)
         );
     }
 
     function deletePerson(id) {
         setPeopleList((prevList) =>
             prevList.filter((person) => person.id !== id)
-        ).sort((a, b) => b.score - a.score)
+        ).sort((a, b) => b.score - a.score);
     }
 
     useEffect(() => {
@@ -68,7 +79,7 @@ function App() {
                 <p className="name">
                     {person.firstName} {person.lastName}
                 </p>
-                <p className="time">5/22/2021, 3:21:57 PM</p>
+                <p className="time">{person.date}</p>
             </div>
             <p className="country">{person.country}</p>
             <p className="score">{person.score}</p>
@@ -104,7 +115,12 @@ function App() {
     return (
         <div className="container">
             <h1>LEADERBOARD</h1>
-            <form className="inputContainer" action="" onSubmit={addPlayer} autoComplete="off">
+            <form
+                className="inputContainer"
+                action=""
+                onSubmit={addPlayer}
+                autoComplete="off"
+            >
                 <input
                     type="text"
                     placeholder="First Name"
